@@ -151,4 +151,8 @@
   .contact-form button:hover {
     background-color: #cc2f2f;
   }
+  .navbar-brand img {
+    border: 2px solid #ff3b3b;
+    object-fit: cover;
+  }
   
