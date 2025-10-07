@@ -1,158 +1,199 @@
 /* Hero Background */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('../Latihan-Bootstrap/img/MONEY\ HIEST.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-  }
-  .hero-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    animation: fadeInDown 2s ease-out;
-  }
-  .hero-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Characters Section */
-  .character-card {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../Latihan-Bootstrap/img/MONEY HIEST.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInDown 2s ease-out;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Characters Section */
+.character-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.character-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+.character-card:hover img {
+  transform: scale(1.2);
+  filter: brightness(0.7);
+}
+.character-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.character-card .overlay h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff3b3b;
+}
+.character-card .overlay p {
+  font-size: 1rem;
+}
+.character-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Parallax Background */
+.parallax-about, .parallax-contact {
+  background: url('../Latihan-Bootstrap/img/MONEY HIEST.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+.parallax-about::before, .parallax-contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+#about .container, #contact .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact */
+#contact h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.contact-form {
+  max-width: 700px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff3b3b;
+  box-shadow: 0 0 5px rgba(255,59,59,0.5);
+}
+.contact-form button {
+  background-color: #ff3b3b;
+  border: none;
+  padding: 12px 0;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #cc2f2f;
+}
+
+/* Logo */
+.navbar-brand img {
+  border: 2px solid #ff3b3b;
+  object-fit: cover;
+}
+
+/* Navbar active link */
+.navbar-nav .nav-link.active {
+  color: #ff3b3b !important;
+  font-weight: bold;
+  position: relative;
+}
+.navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff3b3b;
+  border-radius: 2px;
+}
+
+/* ===== Navbar Slide Animation (khusus HP) ===== */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    max-height: 0;
     overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  .character-card img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-    transition: transform 0.5s ease;
-  }
-  .character-card:hover img {
-    transform: scale(1.2);
-    filter: brightness(0.7);
-  }
-  .character-card .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
+    transition: max-height 0.1s ease, opacity 0.1s ease;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
   }
-  .character-card .overlay h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ff3b3b;
-  }
-  .character-card .overlay p {
-    font-size: 1rem;
-  }
-  .character-card:hover .overlay {
+  .navbar-collapse.show,
+  .navbar-collapse.showing {
+    max-height: 500px;
     opacity: 1;
   }
-  
-  /* Parallax Backgrounds */
-  .parallax-about {
-    background: url('../Latihan-Bootstrap/img/MONEY\ HIEST.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
-    position: relative;
-    z-index: 1;
+
+  /* Efek fade-in menu */
+  .navbar-collapse.show .nav-link {
+    animation: fadeSlideIn 0.5s ease forwards;
   }
-  .parallax-contact {
-    background: url('../Latihan-Bootstrap/img/MONEY\ HIEST.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
-    position: relative;
-    z-index: 1;
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  .parallax-about::before,
-  .parallax-contact::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: -1;
-  }
-  #about .container,
-  #contact .container {
-    position: relative;
-    z-index: 2;
-  }
-  
-  /* Contact Title */
-  #contact h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 30px;
-  }
-  
-  /* Contact Form */
-  .contact-form {
-    max-width: 700px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 8px;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    border: 1px solid #000;
-    border-radius: 6px;
-    background: #fff;
-    color: #000;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: #ff3b3b;
-    box-shadow: 0 0 5px rgba(255,59,59,0.5);
-  }
-  /* Button Full Red */
-  .contact-form button {
-    background-color: #ff3b3b;
-    border: none;
-    padding: 12px 0;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s ease;
-  }
-  .contact-form button:hover {
-    background-color: #cc2f2f;
-  }
-  .navbar-brand img {
-    border: 2px solid #ff3b3b;
-    object-fit: cover;
-  }
-  
+}
+#contact {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
