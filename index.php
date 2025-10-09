@@ -156,7 +156,7 @@ async function updateChart() {
 }
 
 initChart();
-setInterval(updateChart, 2000);
+setInterval(updateChart, 1000);
 </script>
 
 
